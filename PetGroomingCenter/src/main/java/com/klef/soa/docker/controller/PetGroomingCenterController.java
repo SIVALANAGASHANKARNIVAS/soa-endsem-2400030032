@@ -19,12 +19,17 @@ import com.klef.soa.docker.entity.PetGroomingCenter;
 import com.klef.soa.docker.service.PetGroomingCenterService;
 
 @RestController
-@RequestMapping("/centers")
 @CrossOrigin("*")
 public class PetGroomingCenterController {
 
 	@Autowired
     private PetGroomingCenterService service;
+	
+	@GetMapping("/home")
+	public String home()
+	{
+		return "PetGroomingCenter Details";
+	}
 	
     @PostMapping("/add")
     public ResponseEntity<PetGroomingCenter> addCenter(@RequestBody PetGroomingCenter center)
